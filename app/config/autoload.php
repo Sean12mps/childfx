@@ -46,7 +46,9 @@ $autoload['models'] = array_merge($autoload['models'], array(''));
  *  Auto-load Config files
  */
 $autoload['hooks'] = array_merge($autoload['hooks'], array(
-	'childfx_script'));
+		'childfx_script'
+	,	'childfx_ajax'
+	));
 
 /*
  *  Auto-load Shortcode files

@@ -28,6 +28,9 @@ add_action('init', 'childfx_register_scripts');
  * This function register our style and script files
  */
 function childfx_register_scripts(){   
+    wp_register_script('childfx-command', CHILD_JS_URL . '/command.js', array('jquery'));
+    wp_register_script('childfx-underscore', CHILD_JS_URL . '/underscore.js', array('jquery'));
+    wp_register_script('childfx-backbone', CHILD_JS_URL . '/backbone.js', array('jquery'));
     wp_register_script('childfx-functions', CHILD_JS_URL . '/functions.js', array('jquery'));
 }
 
@@ -36,6 +39,9 @@ function childfx_register_scripts(){
  */
 add_action('calibrefx_meta', 'childfx_load_script');
 function childfx_load_script(){   
+	wp_enqueue_script('childfx-underscore');
+	wp_enqueue_script('childfx-backbone');
+	wp_enqueue_script('childfx-command');
 	wp_enqueue_script('childfx-functions');
     
 }
